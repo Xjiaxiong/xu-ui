@@ -1,4 +1,6 @@
 import { createApp } from "vue"
-import SFCButton from "./TSXButton"
+import App from "./App.vue"
 
-createApp(SFCButton).mount("#app")
+const app = createApp(App)
+
+app.mount("#app")
