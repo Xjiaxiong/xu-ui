@@ -8,8 +8,8 @@
     "jsx": "preserve",
   },
   "include": [
-    "./**/*.*",
-    "./shims-vue.d.ts",
+    "./src/**/*.*",
+    "./src/shims-vue.d.ts",
   ],
   "exclude": [
     "node_modules"
