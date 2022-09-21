@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "test": "vitest",
+    "test:run": "vitest run",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
@@ -43,6 +44,8 @@
   },
   "dependencies": {
     "@algolia/client-search": "4.9.1",
+    "@commitlint/cli": "17.0.2",
+    "@commitlint/config-conventional": "17.0.2",
     "axios": "^0.27.2",
     "react": "16.8.0",
     "react-dom": "16.8.0",
