@@ -1,41 +1,48 @@
-import { h, defineComponent, PropType, toRefs } from "vue"
+import { defineComponent, PropType } from "vue";
 import "uno.css";
 
-export type ISize = 'small' | 'medium' | 'large'
-export type IColor = 'black' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'pink'
+export type ISize = "small" | "medium" | "large";
+export type IColor =
+  | "black"
+  | "gray"
+  | "red"
+  | "yellow"
+  | "green"
+  | "blue"
+  | "indigo"
+  | "purple"
+  | "pink";
 export const props = {
-
   size: {
     type: String as PropType<ISize>,
-    default: 'small'
+    default: "small",
   },
 
   color: {
     type: String as PropType<IColor>,
-    default: 'blue'  // 设定默认颜色
+    default: "blue", // 设定默认颜色
   },
 
   round: {
     type: Boolean,
-    default: false
+    default: false,
   },
 
   plain: {
     type: Boolean,
-    default: false
+    default: false,
   },
 
   icon: {
     type: String,
-    default: ''
-  }
-} as const
+    default: "",
+  },
+} as const;
 
 export default defineComponent({
   name: "SButton",
   props,
-  setup (props, { slots }) {
-
+  setup(props, { slots }) {
     const size = {
       small: {
         x: "2",
@@ -54,8 +61,9 @@ export default defineComponent({
       },
     };
 
-    return () => <button
-      class={`
+    return () => (
+      <button
+        class={`
           py-${size[props.size].y}
           px-${size[props.size].x}
           ${props.round ? "rounded-full" : "rounded-lg"}
@@ -70,13 +78,14 @@ export default defineComponent({
           transition duration-300 ease-in-out transform hover:scale-105
           mx-1
           `}
-    >
-      {props.icon !== "" ? (
-        <i class={`i-ic-baseline-${props.icon} p-3`}></i>
-      ) : (
-        ""
-      )}
-      {slots.default ? slots.default() : ""}
-    </button>
-  }
-})
+      >
+        {props.icon !== "" ? (
+          <i class={`i-ic-baseline-${props.icon} p-3`}></i>
+        ) : (
+          ""
+        )}
+        {slots.default ? slots.default() : ""}
+      </button>
+    );
+  },
+});

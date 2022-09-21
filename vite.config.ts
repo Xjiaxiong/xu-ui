@@ -34,5 +34,12 @@ export default defineConfig({
       //导出模块格式
       formats: ["es", "umd", "iife"]
     }
+  },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    transformMode: {
+      web: [/.[jt]sx$/]
+    }
   }
 })
