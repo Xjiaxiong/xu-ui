@@ -29,6 +29,8 @@ export default defineConfig({
   build: {
     rollupOptions,
     minify: false,
+    sourcemap: true,
+    cssCodeSplit: true,
     lib: {
       entry: "./src/entry.ts",
       name: "SmartyUI",
